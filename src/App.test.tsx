@@ -2,8 +2,13 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('<App />', () => {
+  test('render elements without any problem', () => {
+    render(<App />);
+    const wrapper = screen.getByTestId('app-wrapper');
+    expect(wrapper).toBeInTheDocument();
+
+    const input = screen.getByTestId('app-input');
+    expect(input).toBeInTheDocument();
+  });
+})
