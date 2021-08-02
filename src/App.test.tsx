@@ -17,6 +17,6 @@ describe('<App />', () => {
         expect(input).toBeInTheDocument();
 
         fireEvent.change(input, { target: { value: "test1" } })
-        expect(input.textContent).toBe('test');
+        expect(input).toHaveValue('test');
     });
 })
